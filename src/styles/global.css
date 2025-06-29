@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: light --default
+}
+
+@utility menu {
+  @apply bg-primary/0;
+}
