@@ -1,9 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
 @plugin "daisyui" {
-  themes: light --default
+    themes: light --default
 }
 
 @utility menu {
-  @apply bg-primary/0;
+    @apply bg-primary/0;
+}
+
+.fa-exp {
+    color: red;
 }
