@@ -7,9 +7,6 @@ content:
     view:
       fields: [heroImage, title, pubDate]
     fields:
-      - name: author
-        label: Author
-        type: string
       - name: pubDatetime
         label: Publication Date
         type: date
