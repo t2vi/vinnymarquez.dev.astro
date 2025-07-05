@@ -30,7 +30,9 @@ content:
         type: string
       - name: status
         label: Status
-        type: string
+        type: select
+        options:
+          values: [ active, hiatus, defunct ]
       - name: description
         label: Description
         type: string
