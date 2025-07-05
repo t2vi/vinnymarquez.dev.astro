@@ -41,3 +41,9 @@ content:
       - name: body
         label: Body
         type: rich-text
+media:
+  - name: files
+    label: Files
+    input: data/attachments
+    output: /data/attachments
+    categories: [ png, webp ]
