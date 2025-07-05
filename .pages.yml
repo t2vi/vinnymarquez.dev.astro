@@ -1,0 +1,44 @@
+content:
+  - name: projects
+    label: Projects
+    path: src/data/projects
+    type: collection
+    filename: '{fields.slug}.md'
+    view:
+      fields: [heroImage, title, pubDate]
+    fields:
+      - name: author
+        label: Author
+        type: string
+      - name: pubDatetime
+        label: Publication Date
+        type: date
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      - name: modDatetime
+        label: Modified Date
+        type: date
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      - name: title
+        label: Title
+        type: string
+      - name: slug
+        label: Slug
+        type: string
+      - name: status
+        label: Status
+        type: string
+      - name: description
+        label: Description
+        type: string
+      - name: tag
+        label: Tag
+        type: select
+        options:
+          values: [ tech, sports, music ]
+      - name: body
+        label: Body
+        type: rich-text
