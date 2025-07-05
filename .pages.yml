@@ -44,6 +44,46 @@ content:
       - name: heroImage
         label: Hero Image
         type: image
+  - name: experience
+    label: Experience
+    path: src/data/experience
+    type: collection
+    filename: '{fields.slug}.md'
+    view:
+      fields: [icon, title, pubDate]
+    fields:
+      - name: pubDatetime
+        label: Publication Date
+        type: date
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      - name: modDatetime
+        label: Modified Date
+        type: date
+        options:
+          time: true
+          format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      - name: icon
+        label: Icon
+        type: image
+      - name: company
+        label: Company
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: roles
+        label: Roles
+        type: string
+      - name: status
+        label: Status
+        type: select
+        options:
+          values: [ current, past ]
+      - name: body
+        label: Body
+        type: rich-text
 media:
   - name: files
     label: Files
