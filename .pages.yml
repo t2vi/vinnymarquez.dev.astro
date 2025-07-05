@@ -41,3 +41,6 @@ content:
       - name: body
         label: Body
         type: rich-text
+      - name: heroImage
+        label: Hero Image
+        type: image
