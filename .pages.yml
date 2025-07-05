@@ -48,7 +48,7 @@ content:
     label: Experience
     path: src/data/experience
     type: collection
-    filename: '{fields.slug}.md'
+    filename: '{fields.company}.md'
     view:
       fields: [icon, title, pubDate]
     fields:
@@ -72,6 +72,9 @@ content:
         type: string
       - name: location
         label: Location
+        type: string
+      - name: country
+        label: Country
         type: string
       - name: roles
         label: Roles
