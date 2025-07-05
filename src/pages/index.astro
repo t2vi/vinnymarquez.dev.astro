@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import { HoverCardComponent } from "@/components/hovercard-astro";
+import { Button } from "@/components/ui/button";
 ---
 
 <html lang="en">
@@ -14,7 +16,8 @@ import "../styles/global.css";
   <body class="relative">
     <ul
       class="menu bg-base-200 lg:menu-horizontal rounded-box absolute top-0 right-0 z-99999 invisible xs:invisible sm:invisible
-                md:invisible lg:visible">
+                md:invisible lg:visible"
+    >
       <li>
         <a href="/">
           <svg
@@ -241,15 +244,51 @@ import "../styles/global.css";
           <div class="md:flex m-0">
             <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
               <h6 class="font-bold text-gray-500 text-base">Location</h6>
+              <HoverCardComponent
+                client:load
+                btnLabel="Melbourne, AU"
+                icon=""
+                url=""
+                header=""
+                description=""
+                dateDescription=""
+              />
             </div>
             <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
               <h6 class="font-bold text-gray-500 text-base">Linkedin</h6>
+              <HoverCardComponent
+                client:load
+                btnLabel="@vinnymarquez"
+                icon=""
+                url="https://www.linkedin.com/in/vinnymarquez/"
+                header="Linkedin"
+                description="Test"
+                dateDescription="Member since 2010"
+              />
             </div>
             <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
               <h6 class="font-bold text-gray-500 text-base">Github</h6>
+              <HoverCardComponent
+                client:load
+                btnLabel="@t2vi"
+                icon=""
+                url="https://www.linkedin.com/in/vinnymarquez/"
+                header="@t2vi"
+                description="Mostly personal projects, some work related."
+                dateDescription="Joined 2010"
+              />
             </div>
             <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
               <h6 class="font-bold text-gray-500 text-base">Email</h6>
+              <HoverCardComponent
+                client:load
+                btnLabel="me@vinnymarquez.dev"
+                icon=""
+                url="mailto:me@vinnymarquez.dev"
+                header=""
+                description="Please don't send me spam!"
+                dateDescription=""
+              />
             </div>
           </div>
         </div>
@@ -290,34 +329,31 @@ import "../styles/global.css";
       </section>
       <section class="lg:flex m-0">
         <div
-          class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-100 bg-gray-100 m-0">
-          <div class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5">
+          class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-100 bg-gray-100 m-0"
+        >
+          <div
+            class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
+          >
             <h2 class="font-bold text-base">Experience</h2>
             <div>16 years in IT.</div>
           </div>
         </div>
-        <div class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-50 bg-gray-100 lg:w-[65%]">
-          <ol class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400">
-            <li class="mb-10 ms-6">
-              <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
-            dark:ring-gray-900 dark:bg-gray-700">
-                 <img
-                  src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
-                  alt="Planit Logo"
-                  class="h-8 w-8" />
-              </span>
-              <h3 class="font-medium leading-tight">Planit · Melbourne, AU</h3>
-              <p class="text-sm">Test Automation Consultant</p>
-              <p class="text-sm">2021 - present</p>
-            </li>
+        <div
+          class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-50 bg-gray-100 lg:w-[65%]"
+        >
+          <ol
+            class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400"
+          >
             <li class="mb-10 ms-6">
               <span
                 class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
-            dark:ring-gray-900 dark:bg-gray-700">
+            dark:ring-gray-900 dark:bg-gray-700"
+              >
                 <img
                   src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
                   alt="Planit Logo"
-                  class="h-8 w-8" />
+                  class="h-8 w-8"
+                />
               </span>
               <h3 class="font-medium leading-tight">Planit · Melbourne, AU</h3>
               <p class="text-sm">Test Automation Consultant</p>
@@ -331,7 +367,23 @@ import "../styles/global.css";
                 <img
                   src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
                   alt="Planit Logo"
-                  class="h-8 w-8" />
+                  class="h-8 w-8"
+                />
+              </span>
+              <h3 class="font-medium leading-tight">Planit · Melbourne, AU</h3>
+              <p class="text-sm">Test Automation Consultant</p>
+              <p class="text-sm">2021 - present</p>
+            </li>
+            <li class="mb-10 ms-6">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
+            dark:ring-gray-900 dark:bg-gray-700"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
+                  alt="Planit Logo"
+                  class="h-8 w-8"
+                />
               </span>
               <h3 class="font-medium leading-tight">Planit · Melbourne, AU</h3>
               <p class="text-sm">Test Automation Consultant</p>
@@ -356,15 +408,26 @@ import "../styles/global.css";
           class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-100 lg:w-[65%] text-gray-500"
         >
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')" title="Woman holding a mug">
+            <div
+              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
+              title="Woman holding a mug"
+            >
             </div>
-            <div class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div
+              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
               <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">
-                  Active
-                </p>
+                <p class="text-sm text-gray-600 flex items-center">Active</p>
                 <div class="text-gray-600 font-bold text-xl mb-2">t2vi</div>
-                <p class="text-gray-500 text-base">Welcome to my digital playground—a blog where all my passions collide. From hardware hacks and software tinkering, to cycling, jiujitsu, running, and the music that fuels it all—this is where curiosity meets chaos. It’s part tech journal, part training log, part life-in-progress. Dive in, geek out, and maybe get inspired along the way.</p>
+                <p class="text-gray-500 text-base">
+                  Welcome to my digital playground—a blog where all my passions
+                  collide. From hardware hacks and software tinkering, to
+                  cycling, jiujitsu, running, and the music that fuels it
+                  all—this is where curiosity meets chaos. It’s part tech
+                  journal, part training log, part life-in-progress. Dive in,
+                  geek out, and maybe get inspired along the way.
+                </p>
               </div>
               <div class="flex items-center">
                 <div class="join">
@@ -376,15 +439,28 @@ import "../styles/global.css";
             </div>
           </div>
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')" title="Woman holding a mug">
+            <div
+              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
+              title="Woman holding a mug"
+            >
             </div>
-            <div class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div
+              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
               <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">
-                  Active
+                <p class="text-sm text-gray-600 flex items-center">Active</p>
+                <div class="text-gray-600 font-bold text-xl mb-2">
+                  Tito Science
+                </div>
+                <p class="text-gray-500 text-base">
+                  Tito Science is what happens when middle-aged chaos meets
+                  musical ambition. Born from jam sessions, late-night ideas,
+                  and way too much caffeine, we mix rock, funk, and a bit of
+                  weirdness—because why not? We're not here to chase trends,
+                  just good vibes, loud sounds, and the occasional existential
+                  crises in odd time.
                 </p>
-                <div class="text-gray-600 font-bold text-xl mb-2">Tito Science</div>
-                <p class="text-gray-500 text-base">Tito Science is what happens when middle-aged chaos meets musical ambition. Born from jam sessions, late-night ideas, and way too much caffeine, we mix rock, funk, and a bit of weirdness—because why not? We're not here to chase trends, just good vibes, loud sounds, and the occasional existential crises in odd time.</p>
               </div>
               <div class="flex items-center">
                 <div class="join">
@@ -395,15 +471,27 @@ import "../styles/global.css";
             </div>
           </div>
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')" title="Woman holding a mug">
+            <div
+              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
+              title="Woman holding a mug"
+            >
             </div>
-            <div class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div
+              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
               <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">
-                  Inactive
+                <p class="text-sm text-gray-600 flex items-center">Inactive</p>
+                <div class="text-gray-600 font-bold text-xl mb-2">
+                  Late Bloomer Cycling
+                </div>
+                <p class="text-gray-500 text-base">
+                  A passion project born on two wheels, our cycling blog was a
+                  fun ride with friends across the Philippines—sharing routes,
+                  stories, and the occasional crash (mostly ego). It eventually
+                  came to a halt when I moved to Australia, but the memories
+                  (and saddle sores) live on.
                 </p>
-                <div class="text-gray-600 font-bold text-xl mb-2">Late Bloomer Cycling</div>
-                <p class="text-gray-500 text-base">A passion project born on two wheels, our cycling blog was a fun ride with friends across the Philippines—sharing routes, stories, and the occasional crash (mostly ego). It eventually came to a halt when I moved to Australia, but the memories (and saddle sores) live on.</p>
               </div>
               <div class="flex items-center">
                 <div class="join">
@@ -414,15 +502,27 @@ import "../styles/global.css";
             </div>
           </div>
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')" title="Woman holding a mug">
+            <div
+              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
+              title="Woman holding a mug"
+            >
             </div>
-            <div class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div
+              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
               <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">
-                  Defunct
+                <p class="text-sm text-gray-600 flex items-center">Defunct</p>
+                <div class="text-gray-600 font-bold text-xl mb-2">
+                  Titojutsu
+                </div>
+                <p class="text-gray-500 text-base">
+                  We were a small BJJ clothing store built with passion for the
+                  sport and the community. Unfortunately, due to supplier
+                  issues, we had to close shop. We’re proud of what we created
+                  and grateful for everyone who supported us along the way. Oss!
+                  👊
                 </p>
-                <div class="text-gray-600 font-bold text-xl mb-2">Titojutsu</div>
-                <p class="text-gray-500 text-base">We were a small BJJ clothing store built with passion for the sport and the community. Unfortunately, due to supplier issues, we had to close shop. We’re proud of what we created and grateful for everyone who supported us along the way. Oss! 👊</p>
               </div>
               <div class="flex items-center">
                 <div class="join">
@@ -432,7 +532,7 @@ import "../styles/global.css";
               </div>
             </div>
           </div>
-          
+
           <!-- <a href="/projects/tito-science" class="group">
             <div
               class="card lg:card-side bg-base-100 shadow-xl rounded-none mb-10"
