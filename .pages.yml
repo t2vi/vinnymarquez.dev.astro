@@ -75,7 +75,9 @@ content:
         type: string
       - name: country
         label: Country
-        type: string
+        type: select
+        options:
+          values: [ AU, PH ]
       - name: roles
         label: Roles
         type: string
