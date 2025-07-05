@@ -52,18 +52,18 @@ content:
     view:
       fields: [icon, title, pubDate]
     fields:
-      - name: pubDatetime
-        label: Publication Date
+      - name: startDate
+        label: Start Date
         type: date
         options:
           time: true
-          format: yyyy-MM-dd'T'HH:mm:ss'Z'
-      - name: modDatetime
-        label: Modified Date
+          format: yyyy-MM
+      - name: endtime
+        label: End Date
         type: date
         options:
           time: true
-          format: yyyy-MM-dd'T'HH:mm:ss'Z'
+          format: yyyy-MM
       - name: icon
         label: Icon
         type: image
