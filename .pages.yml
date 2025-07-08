@@ -89,6 +89,22 @@ content:
       - name: body
         label: Body
         type: rich-text
+  - name: HomepageSettings
+    label: Homepage Settings
+    path: src/data/homepage.json
+    type: file
+    fields:
+      - name: role
+        label: Role
+        type: string
+      - name: location
+        label: Location
+        type: string
+      - name: aboutMe
+        label: About Me
+        type: rich-text
+      
+      
 media:
   - name: files
     label: Files
