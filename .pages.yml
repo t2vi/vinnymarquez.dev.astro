@@ -5,15 +5,15 @@ content:
     type: collection
     filename: '{fields.slug}.md'
     view:
-      fields: [heroImage, title, pubDatetime, featured]
-      sort: [ pubDatetime, featured ]
+      fields: [hero-image, title, pub-date-time, featured]
+      sort: [ pub-date-time, featured ]
       search: [ title ]
       default:
         search: ''
         sort: featured
         order: desc
     fields:
-      - name: pubDatetime
+      - name: pub-date-time
         label: Publication Date
         type: date
         options:
@@ -69,20 +69,20 @@ content:
     type: collection
     filename: '{fields.company}.md'
     view:
-      fields: [icon, company, role, startdate]
+      fields: [icon, company, role, start-date]
       search: [ title ]
       default:
         search: ''
         sort: pubDate
         order: desc
     fields:
-      - name: startDate
+      - name: start-date
         label: Start Date
         type: date
         options:
           time: true
           format: yyyy-MM
-      - name: endDate
+      - name: end-date
         label: End Date
         type: date
         options:
