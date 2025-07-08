@@ -8,11 +8,13 @@ const projects = defineCollection({
     body: z.string().optional(),
     heroImage: z.string().optional(),
     type: z.string().optional(),
+    status: z.string().optional(),
+    description: z.string().optional(),
     attachments: z.array(z.string()).optional(),
   }),
 });
 
-const experience = defineCollection({
+const experiences = defineCollection({
   loader: glob({ pattern: '**/*.md', base: "./src/data/experience" }),
   schema: z.object({
     role: z.string(),
@@ -29,4 +31,4 @@ const pages = defineCollection({
 });
  
 // Export all collections
-export const collections = { projects, experience, pages };
+export const collections = { projects, experiences, pages };

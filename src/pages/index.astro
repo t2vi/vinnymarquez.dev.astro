@@ -4,8 +4,10 @@ import "../styles/global.css";
 import { HoverCardComponent } from "@components/hovercard-astro";
 import Layout from "@layouts/Layout.astro";
 import Footer from "@components/footer.astro";
-// import type { AnimateIcon } from "@components/animate-ui/icons/icon";
-// import type { ArrowDown } from "lucide-react";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const filteredprojects = projects.slice(0, 3);
 ---
 
 <Layout>
@@ -306,11 +308,6 @@ import Footer from "@components/footer.astro";
             </div>
           </div>
         </div>
-        <!-- <ArrowDown animateOnHover />
-// Or use with the AnimateIcon component
-          <AnimateIcon animateOnHover>
-          <ArrowDown />
-        </AnimateIcon> -->
       </section>
       <section class="lg:flex m-0">
         <div
@@ -426,10 +423,11 @@ import Footer from "@components/footer.astro";
         <div
           class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-100 lg:w-[65%] text-gray-500"
         >
+          {filteredprojects.map((project) => 
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
             <div
               class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
+              style={`background-image: url(${project.data.heroImage})`}
               title="Woman holding a mug"
             >
             </div>
@@ -437,15 +435,10 @@ import Footer from "@components/footer.astro";
               class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
             >
               <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">Active</p>
-                <div class="text-gray-600 font-bold text-xl mb-2">t2vi</div>
+                <p class="text-sm text-gray-600 flex items-center">{project.data.status}</p>
+                <div class="text-gray-600 font-bold text-xl mb-2">{project.data.title}</div>
                 <p class="text-gray-500 text-base">
-                  Welcome to my digital playground—a blog where all my passions
-                  collide. From hardware hacks and software tinkering, to
-                  cycling, jiujitsu, running, and the music that fuels it
-                  all—this is where curiosity meets chaos. It’s part tech
-                  journal, part training log, part life-in-progress. Dive in,
-                  geek out, and maybe get inspired along the way.
+                  {project.data.description}
                 </p>
               </div>
               <div class="flex items-center">
@@ -457,159 +450,10 @@ import Footer from "@components/footer.astro";
               </div>
             </div>
           </div>
-          <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div
-              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
-              title="Woman holding a mug"
-            >
-            </div>
-            <div
-              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-            >
-              <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">Active</p>
-                <div class="text-gray-600 font-bold text-xl mb-2">
-                  Tito Science
-                </div>
-                <p class="text-gray-500 text-base">
-                  Tito Science is what happens when middle-aged chaos meets
-                  musical ambition. Born from jam sessions, late-night ideas,
-                  and way too much caffeine, we mix rock, funk, and a bit of
-                  weirdness—because why not? We're not here to chase trends,
-                  just good vibes, loud sounds, and the occasional existential
-                  crises in odd time.
-                </p>
-              </div>
-              <div class="flex items-center">
-                <div class="join">
-                  <div class="badge badge-outline">music</div>
-                  <div class="badge badge-outline ml-1">band</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div
-              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
-              title="Woman holding a mug"
-            >
-            </div>
-            <div
-              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-            >
-              <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">Inactive</p>
-                <div class="text-gray-600 font-bold text-xl mb-2">
-                  Late Bloomer Cycling
-                </div>
-                <p class="text-gray-500 text-base">
-                  A passion project born on two wheels, our cycling blog was a
-                  fun ride with friends across the Philippines—sharing routes,
-                  stories, and the occasional crash (mostly ego). It eventually
-                  came to a halt when I moved to Australia, but the memories
-                  (and saddle sores) live on.
-                </p>
-              </div>
-              <div class="flex items-center">
-                <div class="join">
-                  <div class="badge badge-outline">music</div>
-                  <div class="badge badge-outline ml-1">band</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div
-              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-              style="background-image: url('https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp')"
-              title="Woman holding a mug"
-            >
-            </div>
-            <div
-              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-            >
-              <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">Defunct</p>
-                <div class="text-gray-600 font-bold text-xl mb-2">
-                  Titojutsu
-                </div>
-                <p class="text-gray-500 text-base">
-                  We were a small BJJ clothing store built with passion for the
-                  sport and the community. Unfortunately, due to supplier
-                  issues, we had to close shop. We’re proud of what we created
-                  and grateful for everyone who supported us along the way. Oss!
-                  👊
-                </p>
-              </div>
-              <div class="flex items-center">
-                <div class="join">
-                  <div class="badge badge-outline">sports</div>
-                  <div class="badge badge-outline ml-1">fitness</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- <a href="/projects/tito-science" class="group">
-            <div
-              class="card lg:card-side bg-base-100 shadow-xl rounded-none mb-10"
-            >
-              <figure class="grayscale-0 lg:grayscale group-hover:grayscale-0">
-                <img
-                  src="https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/titoscience-hero.webp"
-                  alt="Album"
-                  class="size-500"
-                />
-              </figure>
-              <div class="card-body">
-                <span class="badge absolute top-3 right-3 bg-green-600"></span>
-                <h2 class="card-title group-hover:text-indigo-500">
-                  Tito Science
-                </h2>
-                <p>
-                  In 2016, what started as a casual conversation between Boyet
-                  and myself quickly evolved into the beginnings of something
-                  bigger.
-                </p>
-                <div class="join">
-                  <div class="badge badge-outline">music</div>
-                  <div class="badge badge-outline ml-1">band</div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="/projects/late-bloomer-cycling" class="group">
-            <div
-              class="card lg:card-side bg-base-100 shadow-xl rounded-none mb-10"
-            >
-              <figure class="grayscale-0 lg:grayscale group-hover:grayscale-0">
-                <img
-                  src="https://raw.githubusercontent.com/chuv13/vinnymarquez.dev.cdn/main/uploads/latebloomercycling-hero.webp"
-                  alt="Album"
-                  class="size-500"
-                />
-              </figure>
-              <div class="card-body">
-                <span class="badge absolute top-3 right-3 bg-green-600"></span>
-                <h2 class="card-title group-hover:text-indigo-500">
-                  Late Bloomer Cycling
-                </h2>
-                <p>
-                  In 2016, what started as a casual conversation between Boyet
-                  and myself quickly evolved into the beginnings of something
-                  bigger.
-                </p>
-                <div class="join">
-                  <div class="badge badge-outline">music</div>
-                  <div class="badge badge-outline ml-1">band</div>
-                </div>
-              </div>
-            </div>
-          </a> -->
-          <!-- <a class="btn mt-5" href="/projects">View all projects</a> -->
+          )}
+          <a class="btn mt-5" href="/projects">View all projects</a>
         </div>
+        
       </section>
       <section class="lg:flex m-0" id="contact-me">
         <div
