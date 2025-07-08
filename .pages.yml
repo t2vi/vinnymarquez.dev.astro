@@ -67,20 +67,20 @@ content:
     type: collection
     filename: '{fields.company}.md'
     view:
-      fields: [icon, company, role, pubDate]
+      fields: [icon, company, role, startdate]
       search: [ title ]
       default:
         search: ''
         sort: pubDate
         order: desc
     fields:
-      - name: startDate
+      - name: startdate
         label: Start Date
         type: date
         options:
           time: true
           format: yyyy-MM
-      - name: endtime
+      - name: enddate
         label: End Date
         type: date
         options:
