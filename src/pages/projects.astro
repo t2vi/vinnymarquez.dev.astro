@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+---
+
+
+<div class="gap-1 pt-4 columns-1 sm:columns-2 xl:columns-3">
+{projects.map((project) => <div class="overflow-hidden mb-1 shadow-xl">
+    {`${project.data.title}`}
+</div>)}
+</div>
+

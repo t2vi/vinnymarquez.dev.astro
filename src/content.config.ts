@@ -1,8 +1,8 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob, file } from 'astro/loaders';
 
-const works = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: "./src/data/works" }),
+const projects = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: "./src/data/projects" }),
   schema: z.object({
     title: z.string(),
     body: z.string().optional(),
@@ -12,15 +12,11 @@ const works = defineCollection({
   }),
 });
 
-const music = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: "./src/data/music" }),
+const experience = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: "./src/data/experience" }),
   schema: z.object({
-    title: z.string(),
-    heroImage: z.string().optional(),
-    embedCode: z.string().optional(),
-    body: z.string().optional(),
-    project: z.string().optional(),
-    type: z.enum(['youtube', 'spotify', 'soundcloud', 'bandcamp']).optional(),
+    role: z.string(),
+    company: z.string().optional(),
   }),
 });
 
@@ -28,10 +24,9 @@ const pages = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: "./src/data/pages" }),
   schema: z.object({
     title: z.string(),
-    header: z.string().optional(),
     body: z.string().optional().optional(),
   }),
 });
  
 // Export all collections
-export const collections = { works, pages, music };
+export const collections = { projects, experience, pages };
