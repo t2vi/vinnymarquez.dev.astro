@@ -5,7 +5,7 @@ content:
     type: collection
     filename: '{fields.slug}.md'
     view:
-      fields: [heroImage, title, pubDate]
+      fields: [heroImage, title, pubDatetime, featured]
     fields:
       - name: pubDatetime
         label: Publication Date
