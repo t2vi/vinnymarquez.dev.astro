@@ -1,17 +1,17 @@
 # build output
-dist/
+dist
 
 # Local fonts
-fonts/
+fonts
 
 # cache files
 .eslintcache
 
 # generated types
-.astro/
+.astro
 
 # dependencies
-node_modules/
+node_modules
 package-lock.json
 
 # logs
