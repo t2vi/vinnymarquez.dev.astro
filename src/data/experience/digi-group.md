@@ -1,6 +1,6 @@
 ---
-startdate: 2019-11
-enddate: 2020-05
+start-date: 2019-11
+end-date: 2020-05
 icon: public/images/tribal-gear.svg
 company: Digi Group
 location: Makati
