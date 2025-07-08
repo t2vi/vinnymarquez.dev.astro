@@ -80,7 +80,24 @@ content:
           values: [ AU, PH ]
       - name: role
         label: Role
-        type: string
+        type: select
+        options:
+          multiple: true
+          values:
+            - value: automation-test-engineer
+              label: Automation Test Engineer
+            - value: automation-test-consultant
+              label: Automation Test Consultant
+            - value: sdet
+              label: SDET
+            - value: systems-architect
+              label: Systems Architect
+            - value: systems-analyst
+              label: Systems Analyst
+            - value: software-developer
+              label: Software-Developer
+            - value: senior-web-developer
+              label: Senior Web Developer
       - name: status
         label: Status
         type: select
