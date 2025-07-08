@@ -1,4 +1,5 @@
 ---
+featured: true
 title: Les Banzuelo's Portfolio
 slug: les-banzuelo-portfolio
 status: active
