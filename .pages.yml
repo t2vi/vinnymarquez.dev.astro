@@ -115,11 +115,9 @@ content:
               label: Software-Developer
             - value: senior-web-developer
               label: Senior Web Developer
-      - name: status
-        label: Status
-        type: select
-        options:
-          values: [ current, past ]
+      - name: current
+        label: Is Current
+        type: boolean
       - name: description
         label: Description
         type: text
