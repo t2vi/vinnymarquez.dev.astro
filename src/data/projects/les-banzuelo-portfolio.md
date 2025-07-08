@@ -5,6 +5,7 @@ slug: les-banzuelo-portfolio
 status: active
 description: Lester Banzuelo is a Filipino drummer, graphic artist, and
   multimedia professional.
-tag: music
+tags:
+  - technology
 heroImage: /public/images/aisen-endorsement.jpg
 ---
