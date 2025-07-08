@@ -1,7 +1,11 @@
 ---
+'use client'; 
 import "../styles/global.css";
 import { HoverCardComponent } from "@components/hovercard-astro";
 import Layout from "@layouts/Layout.astro";
+import Footer from "@components/footer.astro";
+// import type { AnimateIcon } from "@components/animate-ui/icons/icon";
+// import type { ArrowDown } from "lucide-react";
 ---
 
 <Layout>
@@ -226,8 +230,8 @@ import Layout from "@layouts/Layout.astro";
     </div>
     <div id="main" class="relative lg:bg-gray-100 bg-gray-100 h-full">
       <section class="md:flex m-0">
-        <div class="md:shrink-0 md:w-[35%] lg:bg-gray-100 bg-gray-100 m-0">
-          <div class="flex justify-center">
+        <div class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[3%] lg:bg-gray-100 bg-gray-100 m-0">
+          <div class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5">
             <div class="avatar mt-[15%] mb-[10%] lg:pt-[30%] lg:mb-[15%]">
               <div class="mask-radial-at-center">
                 <img
@@ -302,6 +306,11 @@ import Layout from "@layouts/Layout.astro";
             </div>
           </div>
         </div>
+        <!-- <ArrowDown animateOnHover />
+// Or use with the AnimateIcon component
+          <AnimateIcon animateOnHover>
+          <ArrowDown />
+        </AnimateIcon> -->
       </section>
       <section class="lg:flex m-0">
         <div
@@ -640,13 +649,5 @@ import Layout from "@layouts/Layout.astro";
         </div>
       </section>
     </div>
-    <div
-      class="bg-gray-200 py-[2%] text-center justify-center text-xs text-neutral-500 border-0"
-    >
-      <span class="font-semibold">©2025 Vinny Marquez </span> |
-      <a href="https://astro.build/" target="_blank">Astro</a>,
-      <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>,
-      <a href="https://daisyui.com/" target="_blank">DaisyUI</a> on
-      <a href="https://www.netlify.com/" target="_blank">Netlify</a>
-    </div>
+    <Footer></Footer>
   </Layout>

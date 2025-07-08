@@ -10,6 +10,7 @@
   "compilerOptions": {
     "module": "ESModule",
     "moduleResolution": "node",
+    "verbatimModuleSyntax": false,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
 		"baseUrl": ".",
