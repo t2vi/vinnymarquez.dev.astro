@@ -1,6 +1,6 @@
 ---
 'use client'; 
-import "../styles/global.css";
+import "@styles/global.css";
 import { HoverCardComponent } from "@components/hovercard-astro";
 import Layout from "@layouts/Layout.astro";
 import Footer from "@components/footer.astro";
@@ -391,7 +391,7 @@ const filteredexperiences = experiences.slice(0, 3);
               class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
             >
               <div class="mb-8">
-                <p class="text-sm text-gray-600 flex items-center">{project.data.status}</p>
+                <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset float-right">{project.data.status}</span>
                 <div class="text-gray-600 font-bold text-xl mb-2">{project.data.title}</div>
                 <p class="text-gray-500 text-base">
                   {project.data.description}
@@ -399,9 +399,9 @@ const filteredexperiences = experiences.slice(0, 3);
               </div>
               <div class="flex items-center">
                 <div class="join">
-                  <div class="badge badge-outline">music</div>
-                  <div class="badge badge-outline ml-1">tech</div>
-                  <div class="badge badge-outline ml-1">fitness</div>
+                  {project.data.tags?.map((tag) => 
+                    <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset">{tag}</span>
+                  )}
                 </div>
               </div>
             </div>
