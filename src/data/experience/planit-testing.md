@@ -4,6 +4,9 @@ icon: public/images/planit.png
 company: Planit Testing
 location: Melbourne
 country: AU
+roles:
+  - sdet
+  - automation-test-consultant
 current: true
 techUsed:
   - dotnet
