@@ -6,4 +6,14 @@ location: Melbourne
 country: AU
 role: Test Automation Consultant
 status: current
+techUsed:
+  - dotnet
+  - specflow
+  - reqnroll
+  - selenium
+  - selenoid
+  - mstest
+  - nunit
+  - postman
+  - visual-studio
 ---
