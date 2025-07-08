@@ -1,4 +1,5 @@
 ---
+featured: true
 title: Tito Science
 slug: tito-science
 status: active
