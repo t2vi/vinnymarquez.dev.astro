@@ -130,6 +130,10 @@ content:
               label: Jira
             - value: confluence
               label: Confluence
+            - value: azure-devops
+              label: Azure Devops
+            - value: rally-dev
+              label: Rally Dev
             - value: angular
               label: Angular JS
             - value: amadeus
