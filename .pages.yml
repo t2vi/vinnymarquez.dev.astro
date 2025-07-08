@@ -68,6 +68,11 @@ content:
     filename: '{fields.company}.md'
     view:
       fields: [icon, company, role, pubDate]
+      search: [ title ]
+      default:
+        search: ''
+        sort: pubDate
+        order: desc
     fields:
       - name: startDate
         label: Start Date
