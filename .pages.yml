@@ -210,11 +210,9 @@ content:
       - name: aboutMe
         label: About Me
         type: html
-      
-      
 media:
   - name: files
     label: Files
-    input: data/attachments
-    output: /data/attachments
-    categories: [ png, webp ]
+    input: public/images
+    output: public/images
+    categories: [ jpg, webp, png ]
