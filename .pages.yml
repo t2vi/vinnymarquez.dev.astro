@@ -10,7 +10,7 @@ content:
       search: [ title ]
       default:
         search: ''
-        sort: pubDatetime
+        sort: featured
         order: desc
     fields:
       - name: pubDatetime
