@@ -209,7 +209,7 @@ content:
         type: string
       - name: aboutMe
         label: About Me
-        type: rich-text
+        type: html
       
       
 media:

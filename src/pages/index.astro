@@ -4,10 +4,14 @@ import "../styles/global.css";
 import { HoverCardComponent } from "@components/hovercard-astro";
 import Layout from "@layouts/Layout.astro";
 import Footer from "@components/footer.astro";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
+import json from "@data/homepage.json";
 
 const projects = await getCollection("projects");
 const filteredprojects = projects.slice(0, 3);
+
+const experiences = await getCollection("experiences");
+const filteredexperiences = experiences.slice(0, 3);
 ---
 
 <Layout>
@@ -320,27 +324,8 @@ const filteredprojects = projects.slice(0, 3);
             <div>What I am all about.</div>
           </div>
         </div>
-        <div
-          class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-50 lg:w-[65%] text-gray-500"
-        >
-          <p>A Filipino working in IT, residing in Melbourne AU.</p>
-          <br />
-          <p>
-            I currently work as a Software Developer in Test / Consultant for
-            Planit Testing.
-          </p>
-          <br />
-          <p>
-            I have over 12 years of experience in Software Development, and over
-            6 years in Automated UI Testing.
-          </p>
-          <br />
-          <p>
-            I do music for fun. I am the vocalist and one of the
-            composers/producers for the band Tito Science
-          </p>
-          <br />
-          <p>I do cycling, running, and jiujitsu.</p>
+        <div class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-50 lg:w-[65%] text-gray-500">
+          <Fragment set:html={json.aboutMe} />
         </div>
       </section>
       <section class="lg:flex m-0">
@@ -360,51 +345,22 @@ const filteredprojects = projects.slice(0, 3);
           <ol
             class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400"
           >
-            <li class="mb-10 ms-6">
-              <span
-                class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
-            dark:ring-gray-900 dark:bg-gray-700"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
-                  alt="Planit Logo"
-                  class="h-8 w-8"
-                />
-              </span>
-              <h3 class="font-medium leading-tight">Planit · Melbourne, AU</h3>
-              <p class="text-sm">Test Automation Consultant</p>
-              <p class="text-sm">2021 - present</p>
-            </li>
-            <li class="mb-10 ms-6">
-              <span
-                class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
-            dark:ring-gray-900 dark:bg-gray-700"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
-                  alt="Planit Logo"
-                  class="h-8 w-8"
-                />
-              </span>
-              <h3 class="font-medium leading-tight">Planit · Melbourne, AU</h3>
-              <p class="text-sm">Test Automation Consultant</p>
-              <p class="text-sm">2021 - present</p>
-            </li>
-            <li class="mb-10 ms-6">
-              <span
-                class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
-            dark:ring-gray-900 dark:bg-gray-700"
-              >
-                <img
-                  src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
-                  alt="Planit Logo"
-                  class="h-8 w-8"
-                />
-              </span>
-              <h3 class="font-medium leading-tight">Planit · Melbourne, AU</h3>
-              <p class="text-sm">Test Automation Consultant</p>
-              <p class="text-sm">2021 - present</p>
-            </li>
+            {filteredexperiences.map((experience) =>
+              <li class="mb-10 ms-6">
+                <span
+                  class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
+              dark:ring-gray-900 dark:bg-gray-700">
+                  <img
+                    src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
+                    alt="Planit Logo"
+                    class="h-8 w-8"
+                  />
+                </span>
+                <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}</h3>
+                <p class="text-sm">{experience.data.role}</p>
+                <p class="text-sm">{experience.data.startDate} - present</p>
+              </li>
+            )}
           </ol>
           <a class="btn mt-5" href="/resume">View full resume</a>
         </div>

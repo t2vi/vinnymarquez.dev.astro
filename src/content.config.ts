@@ -17,8 +17,11 @@ const projects = defineCollection({
 const experiences = defineCollection({
   loader: glob({ pattern: '**/*.md', base: "./src/data/experience" }),
   schema: z.object({
-    role: z.string(),
+    role: z.array(z.string()),
     company: z.string().optional(),
+    location: z.string().optional(),
+    startDate: z.string().optional(),
+    endDate: z.string().optional(),
   }),
 });
 

@@ -20,6 +20,7 @@
 			"@styles/*": ["src/styles/*"],
 			"@js/*": ["src/js/*"],
 			"@lib/*": ["src/lib/*"],
+      "@data/*": ["src/data/*"],
 			"@icons/*": ["src/icons/*"]
     }
   }
