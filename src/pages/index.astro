@@ -383,7 +383,7 @@ const filteredexperiences = experiences.slice(0, 3);
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
             <div
               class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-              style={`background-image: url(${project.data.heroImage})`}
+              style={`background-image: url(${project.data.heroImage?.replace("public", "")})`}
               title="Woman holding a mug"
             >
             </div>
