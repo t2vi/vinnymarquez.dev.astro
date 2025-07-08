@@ -1,12 +1,12 @@
 import React from 'react';
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { HoverCardTriggerContentComponent } from "@/components/hovercard-trigger-content";
+import { Avatar, AvatarImage, AvatarFallback } from "@components/ui/avatar";
+import { HoverCardTriggerContentComponent } from "@components/hovercard-trigger-content";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
-import { Button } from "@/components/ui/button"
+} from "@components/ui/hover-card"
+import { Button } from "@components/ui/button"
 
 type AvatarComponentProps = {
     btnLabel: string;
