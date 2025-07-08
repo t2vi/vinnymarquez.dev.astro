@@ -10,8 +10,9 @@ import json from "@data/homepage.json";
 const projects = await getCollection("projects");
 const filteredprojects = projects.slice(0, 3);
 
-const experiences = await getCollection("experiences");
-const filteredexperiences = experiences.slice(0, 3);
+const experiences = (await getCollection("experiences")).sort(
+  (a, b) => b.data.startDate?.valueOf() - a.data.startDate?.valueOf(),
+).slice(0, 3);
 ---
 
 <Layout>
@@ -345,20 +346,21 @@ const filteredexperiences = experiences.slice(0, 3);
           <ol
             class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400"
           >
-            {filteredexperiences.map((experience) =>
+            {experiences.map((experience) =>
               <li class="mb-10 ms-6">
                 <span
                   class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
               dark:ring-gray-900 dark:bg-gray-700">
                   <img
-                    src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/au-flag.webp"
+                    src={experience.data.icon?.replace("/public", "")}
                     alt="Planit Logo"
                     class="h-8 w-8"
                   />
+                  {experience.data.startDate}
                 </span>
                 <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}</h3>
                 <p class="text-sm">{experience.data.role}</p>
-                <p class="text-sm">{experience.data.startDate} - present</p>
+                <p class="text-sm">{experience.data.startDate} - {experience.data.endDate}</p>
               </li>
             )}
           </ol>

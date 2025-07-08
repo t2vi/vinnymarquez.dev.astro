@@ -76,13 +76,13 @@ content:
         sort: pubDate
         order: desc
     fields:
-      - name: startdate
+      - name: startDate
         label: Start Date
         type: date
         options:
           time: true
           format: yyyy-MM
-      - name: enddate
+      - name: endDate
         label: End Date
         type: date
         options:
