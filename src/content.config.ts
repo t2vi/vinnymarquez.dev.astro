@@ -23,7 +23,7 @@ const experiences = defineCollection({
     location: z.string().optional(),
     icon: z.string().optional(),
     startdate: z.date().optional(),
-    enddate: z.string().optional(),
+    enddate: z.date().optional(),
   }),
 });
 

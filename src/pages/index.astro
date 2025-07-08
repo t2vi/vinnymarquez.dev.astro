@@ -11,7 +11,7 @@ const projects = await getCollection("projects");
 const filteredprojects = projects.slice(0, 3);
 
 const experiences = (await getCollection("experiences")).sort(
-  (a, b) => b.data.startdate?.valueOf() - a.data.startdate?.valueOf(),
+  (a, b) =>  a.data.startdate?.valueOf() - b.data.startdate?.valueOf(),
 ).slice(0, 3);
 ---
 
@@ -356,7 +356,7 @@ const experiences = (await getCollection("experiences")).sort(
                     alt="Planit Logo"
                     class="h-8 w-8"
                   />
-                  {experience.data.startdate}
+                  
                 </span>
                 <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}</h3>
                 <p class="text-sm">{experience.data.role}</p>

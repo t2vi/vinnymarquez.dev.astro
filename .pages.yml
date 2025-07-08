@@ -81,13 +81,13 @@ content:
         type: date
         options:
           time: true
-          format: yyyy-MM
-      - name: end-date
+          format: yyyy-MM-dd
+      - name: enddate
         label: End Date
         type: date
         options:
           time: true
-          format: yyyy-MM
+          format: yyyy-MM-dd
       - name: icon
         label: Icon
         type: image
