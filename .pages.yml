@@ -8,6 +8,10 @@ content:
       fields: [heroImage, title, pubDatetime, featured]
       sort: [ pubDatetime, featured ]
       search: [ title ]
+      default:
+        search: ''
+        sort: pubDatetime
+        order: desc
     fields:
       - name: pubDatetime
         label: Publication Date
