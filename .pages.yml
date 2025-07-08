@@ -19,6 +19,9 @@ content:
         options:
           time: true
           format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      - name: featured
+        label: Is Featured
+        type: boolean
       - name: title
         label: Title
         type: string
