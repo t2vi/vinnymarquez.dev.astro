@@ -16,4 +16,5 @@ techUsed:
   - nunit
   - postman
   - visual-studio
+  - azure-devops
 ---
