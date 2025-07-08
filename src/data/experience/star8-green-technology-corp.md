@@ -1,9 +1,8 @@
 ---
+startdate: 2020-06
+enddate: 2021-09
 company: Star8 Green Technology Corp.
 location: Manila
 country: PH
-role:
-  - sdet
-  - automation-test-engineer
-  - systems-architect
+current: false
 ---
