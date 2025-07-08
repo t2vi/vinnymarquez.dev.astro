@@ -1,11 +1,8 @@
 ---
+startdate: 2025-07
 company: "Carlson Wagonlit Travel "
 location: Makati
 country: PH
-role:
-  - sdet
-  - systems-analyst
-  - software-developer
 current: false
 techUsed:
   - dotnet
