@@ -6,13 +6,18 @@ import Layout from "@layouts/Layout.astro";
 import Footer from "@components/footer.astro";
 import { getCollection, getEntry, render } from "astro:content";
 import json from "@data/homepage.json";
+import dayjs from "dayjs";
+import YearMonthDate from "@components/year-month-date.astro";
+
 
 const projects = await getCollection("projects");
 const filteredprojects = projects.slice(0, 3);
 
 const experiences = (await getCollection("experiences")).sort(
-  (a, b) =>  a.data.startdate?.valueOf() - b.data.startdate?.valueOf(),
+  (a, b) =>  b.data.startdate?.valueOf() - a.data.startdate?.valueOf(),
 ).slice(0, 3);
+
+
 ---
 
 <Layout>
@@ -358,9 +363,9 @@ const experiences = (await getCollection("experiences")).sort(
                   />
                   
                 </span>
-                <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}</h3>
+                <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}, {experience.data.country}</h3>
                 <p class="text-sm">{experience.data.role}</p>
-                <p class="text-sm">{experience.data.startdate} - {experience.data.enddate}</p>
+                <p class="text-sm"><YearMonthDate date={experience.data.startdate} /> - <YearMonthDate date={experience.data.enddate} /></p> 
               </li>
             )}
           </ol>

@@ -21,6 +21,7 @@ const experiences = defineCollection({
     roles: z.array(z.string()),
     company: z.string().optional(),
     location: z.string().optional(),
+    country: z.string().optional(),
     icon: z.string().optional(),
     startdate: z.date().optional(),
     enddate: z.date().optional(),
