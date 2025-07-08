@@ -49,12 +49,14 @@ content:
         options:
           mutilple: true
           values:
-            - value: tech
+            - value: technology
               label: Technology
             - value: sports
               label: Sports
             - value: music
               label: Music
+            - value: design
+              label: Design
       - name: body
         label: Body
         type: rich-text
