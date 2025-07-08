@@ -7,5 +7,6 @@ description: Lester Banzuelo is a Filipino drummer, graphic artist, and
   multimedia professional.
 tags:
   - technology
+  - music
 heroImage: /public/images/aisen-endorsement.jpg
 ---
