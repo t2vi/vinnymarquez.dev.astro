@@ -43,8 +43,8 @@ content:
       - name: description
         label: Description
         type: string
-      - name: tag
-        label: Tag
+      - name: tags
+        label: Tags
         type: select
         options:
           mutilple: true
@@ -102,8 +102,8 @@ content:
         type: select
         options:
           values: [ AU, PH ]
-      - name: role
-        label: Role
+      - name: roles
+        label: Roles
         type: select
         options:
           multiple: true
