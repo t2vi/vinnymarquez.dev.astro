@@ -117,7 +117,7 @@ content:
             - value: systems-analyst
               label: Systems Analyst
             - value: software-developer
-              label: Software-Developer
+              label: Software Developer
             - value: senior-web-developer
               label: Senior Web Developer
       - name: current
