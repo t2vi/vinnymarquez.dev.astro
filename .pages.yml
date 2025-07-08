@@ -138,7 +138,20 @@ content:
               label: Travelport
             - value: sabre
               label: Sabre
-            
+            - value: asp-dotnet-mvc
+              label: ASP .NET MVC
+            - value: invision
+              label: Invision
+            - value: silverlight
+              label: Silverlight
+            - value: wpf
+              label: WPF
+            - value: vb-dotnet
+              label: VB .NET
+            - value: vb6
+              label: VB6
+            - value: installshield-x
+              label: InstallShield X
   - name: HomepageSettings
     label: Homepage Settings
     path: src/data/homepage.json
