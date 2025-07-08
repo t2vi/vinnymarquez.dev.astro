@@ -6,6 +6,7 @@ content:
     filename: '{fields.slug}.md'
     view:
       fields: [heroImage, title, pubDatetime, featured]
+      sort: [ pubDatetime, featured ]
     fields:
       - name: pubDatetime
         label: Publication Date
