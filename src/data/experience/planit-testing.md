@@ -1,6 +1,6 @@
 ---
 startdate: 2021-10-01
-icon: public/images/planit.png
+icon: /public/images/planit.png
 company: Planit Testing
 location: Melbourne
 country: AU
