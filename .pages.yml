@@ -47,7 +47,7 @@ content:
         label: Tags
         type: select
         options:
-          mutilple: true
+          multiple: true
           values:
             - value: technology
               label: Technology
