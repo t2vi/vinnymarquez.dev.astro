@@ -1,6 +1,6 @@
 ---
 title: Tito Science
-slug: tito-sceience
+slug: tito-science
 status: active
 description: Tito Science is what happens when middle-aged chaos meets musical
   ambition. Born from jam sessions, late-night ideas, and way too much caffeine,
