@@ -11,4 +11,6 @@ techUsed:
   - specflow
   - selenium
   - nunit
+  - jira
+  - confluence
 ---
