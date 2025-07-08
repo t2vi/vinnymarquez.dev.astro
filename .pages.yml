@@ -29,7 +29,14 @@ content:
         label: Status
         type: select
         options:
-          values: [ active, hiatus, defunct ]
+          values: 
+            - value: active
+              label: Active
+            - value: hiatus
+              label: Hiatus
+            - value: defunct
+              label: Defunct
+          
       - name: description
         label: Description
         type: string
@@ -37,7 +44,14 @@ content:
         label: Tag
         type: select
         options:
-          values: [ tech, sports, music ]
+          mutilple: true
+          values:
+            - value: tech
+              label: Technology
+            - value: sports
+              label: Sports
+            - value: music
+              label: Music
       - name: body
         label: Body
         type: rich-text
