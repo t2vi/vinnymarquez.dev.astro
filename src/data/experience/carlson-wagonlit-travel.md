@@ -1,6 +1,6 @@
 ---
-startdate: 2025-07
-enddate: 2019-06
+startdate: 2018-05
+enddate: 2019-11
 company: "Carlson Wagonlit Travel "
 location: Makati
 country: PH
