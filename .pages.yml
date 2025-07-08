@@ -5,15 +5,15 @@ content:
     type: collection
     filename: '{fields.slug}.md'
     view:
-      fields: [hero-image, title, pub-date-time, featured]
-      sort: [ pub-date-time, featured ]
+      fields: [heroimage, title, pubdatetime, featured]
+      sort: [ pubdatetime, featured ]
       search: [ title ]
       default:
         search: ''
         sort: featured
         order: desc
     fields:
-      - name: pub-date-time
+      - name: pubdatetime
         label: Publication Date
         type: date
         options:
@@ -60,7 +60,7 @@ content:
       - name: body
         label: Body
         type: rich-text
-      - name: heroImage
+      - name: heroimage
         label: Hero Image
         type: image
   - name: experience
@@ -69,14 +69,14 @@ content:
     type: collection
     filename: '{fields.company}.md'
     view:
-      fields: [icon, company, role, start-date]
+      fields: [icon, company, role, startdate]
       search: [ title ]
       default:
         search: ''
         sort: pubDate
         order: desc
     fields:
-      - name: start-date
+      - name: startdate
         label: Start Date
         type: date
         options:

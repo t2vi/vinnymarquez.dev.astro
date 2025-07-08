@@ -6,7 +6,7 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     body: z.string().optional(),
-    heroImage: z.string().optional(),
+    heroimage: z.string().optional(),
     type: z.string().optional(),
     status: z.string().optional(),
     description: z.string().optional(),
@@ -22,8 +22,8 @@ const experiences = defineCollection({
     company: z.string().optional(),
     location: z.string().optional(),
     icon: z.string().optional(),
-    startDate: z.date().optional(),
-    endDate: z.string().optional(),
+    startdate: z.date().optional(),
+    enddate: z.string().optional(),
   }),
 });
 

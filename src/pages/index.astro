@@ -11,7 +11,7 @@ const projects = await getCollection("projects");
 const filteredprojects = projects.slice(0, 3);
 
 const experiences = (await getCollection("experiences")).sort(
-  (a, b) => b.data.startDate?.valueOf() - a.data.startDate?.valueOf(),
+  (a, b) => b.data.startdate?.valueOf() - a.data.startdate?.valueOf(),
 ).slice(0, 3);
 ---
 
@@ -356,11 +356,11 @@ const experiences = (await getCollection("experiences")).sort(
                     alt="Planit Logo"
                     class="h-8 w-8"
                   />
-                  {experience.data.startDate}
+                  {experience.data.startdate}
                 </span>
                 <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}</h3>
                 <p class="text-sm">{experience.data.role}</p>
-                <p class="text-sm">{experience.data.startDate} - {experience.data.endDate}</p>
+                <p class="text-sm">{experience.data.startdate} - {experience.data.enddate}</p>
               </li>
             )}
           </ol>
@@ -385,7 +385,7 @@ const experiences = (await getCollection("experiences")).sort(
           <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
             <div
               class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-              style={`background-image: url(${project.data.heroImage?.replace("/public", "")})`}
+              style={`background-image: url(${project.data.heroimage?.replace("/public", "")})`}
               title="Woman holding a mug"
             >
             </div>
