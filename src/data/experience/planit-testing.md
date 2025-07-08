@@ -1,6 +1,6 @@
 ---
 startDate: 2021-10
-icon: /data/attachments/planit.png
+icon: public/images/planit.png
 company: Planit Testing
 location: Melbourne
 country: AU
@@ -8,7 +8,7 @@ role:
   - automation-test-engineer
   - automation-test-consultant
   - sdet
-status: current
+current: true
 techUsed:
   - dotnet
   - specflow
