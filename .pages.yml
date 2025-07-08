@@ -89,6 +89,56 @@ content:
       - name: description
         label: Description
         type: text
+      - name: responsibilities
+        label: Responsibilities
+        type: rich-text
+      - name: techUsed
+        label: Technologies Used
+        type: select
+        options:
+          multiple: true
+          values:
+            - value: dotnet
+              label: .NET
+            - value: specflow
+              label: SpecFlow
+            - value: reqnroll
+              label: Reqnroll
+            - value: selenium
+              label: Selenium
+            - value: selenoid
+              label: Selenoid
+            - value: mstest
+              label: MS Test
+            - value: nunit
+              label: NUnit
+            - value: postman
+              label: Postman
+            - value: visual-studio
+              label: Visual Studio
+            - value: visual-studio-code
+              label: VS Code
+            - value: javascript
+              label: JavaScript
+            - value: typescript
+              label: TypeScript
+            - value: taiko
+              label: Taiko
+            - value: gauge
+              label: gauge
+            - value: jira
+              label: Jira
+            - value: confluence
+              label: Confluence
+            - value: angular
+              label: Angular JS
+            - value: amadeus
+              label: Amadeus
+            - value: travelport
+              label: Travelport
+            - value: sabre
+              label: Sabre
+            
   - name: HomepageSettings
     label: Homepage Settings
     path: src/data/homepage.json
