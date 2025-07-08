@@ -1,5 +1,15 @@
 ---
 import dayjs from "dayjs";
 const { date } = Astro.props;
+let html = '';
+if (dayjs(date).format("MMMM YYYY") === dayjs(new Date()).format("MMMM YYYY"))
+{
+    html = "Present";
+}
+else
+{
+    html = dayjs(date).format("MMMM YYYY");
+}
 ---
-{dayjs(date).format("MMM YYYY")}
+ 
+<Fragment set:html={html} />
