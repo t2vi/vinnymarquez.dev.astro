@@ -50,7 +50,7 @@ content:
     type: collection
     filename: '{fields.company}.md'
     view:
-      fields: [icon, title, pubDate]
+      fields: [icon, title, company, role, pubDate]
     fields:
       - name: startDate
         label: Start Date
