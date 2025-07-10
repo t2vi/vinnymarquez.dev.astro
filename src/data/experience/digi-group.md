@@ -1,7 +1,7 @@
 ---
 startdate: 2019-11-01
 enddate: 2020-05-01
-icon: /public/images/tribal-gear.svg
+icon: public/images/digi_bnc_logo.jpeg
 company: Digi Group
 location: Makati
 country: PH
