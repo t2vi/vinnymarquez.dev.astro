@@ -6,13 +6,13 @@ company: Digi Group
 location: Makati
 country: PH
 roles:
-  - automation-test-engineer
+  - Automation Test Engineer
 current: false
 techUsed:
-  - dotnet
-  - specflow
-  - selenium
-  - nunit
-  - jira
-  - confluence
+  - .NET
+  - SpecFlow
+  - Selenium
+  - NUnit
+  - Jira
+  - Confluence
 ---
