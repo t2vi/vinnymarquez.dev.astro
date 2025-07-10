@@ -10,11 +10,21 @@ import sitemap from "@astrojs/sitemap";
 
 import robotsTxt from "astro-robots-txt";
 
+import sentry from "@sentry/astro";
+import spotlightjs from "@spotlightjs/astro";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://vinnymarquez.dev',
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react(), mdx(), sitemap(), robotsTxt()],
+  integrations: [
+    react(),
+    mdx(),
+    sitemap(),
+    robotsTxt(),
+    sentry(),
+    spotlightjs(),
+  ],
 });

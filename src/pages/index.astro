@@ -165,8 +165,8 @@ const experiences = (await getCollection("experiences"))
                 </span>
                 
                 <h2 class="font-medium leading-tight">
-                  {experience.data.roles.map(role => (
-                    <span class="text-gray-800 dark:text-white">{role}, </span>
+                  {experience.data.roles.map((role, index, array) => (
+                    <span class="text-gray-800">{role}{(array.length-1 != index) ? ` · ` : ``} </span>
                   ))}
                 </h2>
                 <h3>
