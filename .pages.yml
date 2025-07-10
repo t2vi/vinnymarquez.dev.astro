@@ -107,7 +107,7 @@ content:
         type: select
         options:
           multiple: true
-          values: [.NET, SpecFlow, Reqnroll, Selenium, Selenoid, MS Test, NUnit, Postman, Visual Studio, VS Code, JavaScript, TypeScript, Taiko, Gauge, Jira, Confluence, Azure Devops, Rally Dev, Angular JS, Amadeus, Travelport Sabre, ASP .NET MVC, Invision, Silverlight, WPF, VB .NET, VB6, InstallShield X]
+          values: [.NET, SpecFlow, Reqnroll, Selenium, Selenoid, MS Test, NUnit, Postman, Visual Studio, VS Code, JavaScript, TypeScript, Taiko, Gauge, Jira, Confluence, Azure Devops, Rally Dev, Angular JS, Amadeus, Travelport, Sabre, ASP .NET MVC, Invision, Silverlight, WPF, VB .NET, VB6, InstallShield X]
   - name: HomepageSettings
     label: Homepage Settings
     path: src/data/homepage.json
