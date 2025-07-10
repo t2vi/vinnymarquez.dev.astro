@@ -6,8 +6,15 @@ company: Star8 Green Technology Corp.
 location: Manila
 country: PH
 roles:
-  - systems-architect
-  - sdet
-  - automation-test-engineer
+  - Systems Architect
+  - SDET
+  - Automation Test Engineer
 current: false
+techUsed:
+  - TypeScript
+  - JavaScript
+  - Gauge
+  - Taiko
+  - Jira
+  - Confluence
 ---
