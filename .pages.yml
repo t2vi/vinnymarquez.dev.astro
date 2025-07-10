@@ -32,14 +32,7 @@ content:
         label: Status
         type: select
         options:
-          values: 
-            - value: active
-              label: Active
-            - value: hiatus
-              label: Hiatus
-            - value: defunct
-              label: Defunct
-          
+          values: [Active, Hiatus, Defunct]
       - name: description
         label: Description
         type: string
@@ -48,15 +41,7 @@ content:
         type: select
         options:
           multiple: true
-          values:
-            - value: technology
-              label: Technology
-            - value: sports
-              label: Sports
-            - value: music
-              label: Music
-            - value: design
-              label: Design
+          values: [Technology, Sports, Music, Design]
       - name: body
         label: Body
         type: rich-text
@@ -107,21 +92,7 @@ content:
         type: select
         options:
           multiple: true
-          values:
-            - value: automation-test-engineer
-              label: Automation Test Engineer
-            - value: automation-test-consultant
-              label: Automation Test Consultant
-            - value: sdet
-              label: SDET
-            - value: systems-architect
-              label: Systems Architect
-            - value: systems-analyst
-              label: Systems Analyst
-            - value: software-developer
-              label: Software Developer
-            - value: senior-web-developer
-              label: Senior Web Developer
+          values: [Automation Test Engineer, Automation Test Consultant, SDET, Systems Architect, Software Developer, Senior Web Developer]
       - name: current
         label: Is Current
         type: boolean
@@ -136,65 +107,7 @@ content:
         type: select
         options:
           multiple: true
-          values:
-            - value: dotnet
-              label: .NET
-            - value: specflow
-              label: SpecFlow
-            - value: reqnroll
-              label: Reqnroll
-            - value: selenium
-              label: Selenium
-            - value: selenoid
-              label: Selenoid
-            - value: mstest
-              label: MS Test
-            - value: nunit
-              label: NUnit
-            - value: postman
-              label: Postman
-            - value: visual-studio
-              label: Visual Studio
-            - value: visual-studio-code
-              label: VS Code
-            - value: javascript
-              label: JavaScript
-            - value: typescript
-              label: TypeScript
-            - value: taiko
-              label: Taiko
-            - value: gauge
-              label: gauge
-            - value: jira
-              label: Jira
-            - value: confluence
-              label: Confluence
-            - value: azure-devops
-              label: Azure Devops
-            - value: rally-dev
-              label: Rally Dev
-            - value: angular
-              label: Angular JS
-            - value: amadeus
-              label: Amadeus
-            - value: travelport
-              label: Travelport
-            - value: sabre
-              label: Sabre
-            - value: asp-dotnet-mvc
-              label: ASP .NET MVC
-            - value: invision
-              label: Invision
-            - value: silverlight
-              label: Silverlight
-            - value: wpf
-              label: WPF
-            - value: vb-dotnet
-              label: VB .NET
-            - value: vb6
-              label: VB6
-            - value: installshield-x
-              label: InstallShield X
+          values: [.NET, SpecFlow, Reqnroll, Selenium, Selenoid, MS Test, NUnit, Postman, Visual Studio, VS Code, JavaScript, TypeScript, Taiko, Gauge, Jira, Confluence, Azure Devops, Rally Dev, Angular JS, Amadeus, Travelport Sabre, ASP .NET MVC, Invision, Silverlight, WPF, VB .NET, VB6, InstallShield X]
   - name: HomepageSettings
     label: Homepage Settings
     path: src/data/homepage.json
