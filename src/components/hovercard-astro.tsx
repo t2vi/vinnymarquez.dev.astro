@@ -17,18 +17,18 @@ type AvatarComponentProps = {
     dateDescription: string;
 };
 
-function GenerateLink(props: string, btnLabel: string, url: string) {
-  if (url === "") {
-    return (<a className="underline text-gray-500" href={url}>{btnLabel}</a>);
-  }
-  return (<span className="underline text-gray-500">{btnLabel}</span>);
-}
+// function GenerateLink(props: string, btnLabel: string, url: string) {
+//   if (url === "") {
+//     return (<a className="underline text-gray-500 md:text-sm lg:text-md" href={url}>{btnLabel}</a>);
+//   }
+//   return (<span className="underline text-gray-500 md:text-sm lg:text-md">{btnLabel}</span>);
+// }
 
 export const HoverCardComponent = ({ btnLabel, url, icon, header, description, dateDescription }: AvatarComponentProps) => {
     return (
         <HoverCard>
             <HoverCardTrigger asChild>
-                <a className="underline text-gray-500" target='_blank' href={url}>{btnLabel}</a>
+                <a className="underline text-gray-500 md:text-xs lg:text-lg" target='_blank' href={url}>{btnLabel}</a>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">
                 <div className="flex justify-between gap-4">

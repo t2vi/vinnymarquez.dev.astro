@@ -1,5 +1,5 @@
 ---
-'use client'; 
+"use client";
 import "@styles/global.css";
 import { HoverCardComponent } from "@components/hovercard-astro";
 import Layout from "@layouts/Layout.astro";
@@ -9,451 +9,496 @@ import json from "@data/homepage.json";
 import dayjs from "dayjs";
 import YearMonthDate from "@components/year-month-date.astro";
 
-
 const projects = await getCollection("projects");
 const filteredprojects = projects.slice(0, 3);
 
-const experiences = (await getCollection("experiences")).sort(
-  (a, b) =>  b.data.startdate?.valueOf() - a.data.startdate?.valueOf(),
-).slice(0, 3);
-
-
+const experiences = (await getCollection("experiences"))
+  .sort((a, b) => b.data.startdate?.valueOf() - a.data.startdate?.valueOf())
+  .slice(0, 3);
 ---
 
 <Layout>
-    <ul
-      class="menu bg-base-200 lg:menu-horizontal rounded-box absolute top-0 right-0 z-99999 invisible xs:invisible sm:invisible
+  <ul
+    class="menu bg-base-200 lg:menu-horizontal rounded-box absolute top-0 right-0 z-99999 invisible xs:invisible sm:invisible
                 md:invisible lg:visible"
+  >
+    <li>
+      <a href="/">
+        <svg
+          class="w-5 h-5 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"
+          ></path>
+        </svg>
+
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/projects">
+        <svg
+          class="w-5 h-5 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            d="M8.737 8.737a21.49 21.49 0 0 1 3.308-2.724m0 0c3.063-2.026 5.99-2.641 7.331-1.3 1.827 1.828.026 6.591-4.023 10.64-4.049 4.049-8.812 5.85-10.64 4.023-1.33-1.33-.736-4.218 1.249-7.253m6.083-6.11c-3.063-2.026-5.99-2.641-7.331-1.3-1.827 1.828-.026 6.591 4.023 10.64m3.308-9.34a21.497 21.497 0 0 1 3.308 2.724m2.775 3.386c1.985 3.035 2.579 5.923 1.248 7.253-1.336 1.337-4.245.732-7.295-1.275M14 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"
+          ></path>
+        </svg>
+
+        Projects
+      </a>
+    </li>
+    <li>
+      <a href="/resume">
+        <svg
+          class="w-5 h-5 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 3v4a1 1 0 0 1-1 1H5m4 8h6m-6-4h6m4-8v16a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7.914a1 1 0 0 1 .293-.707l3.914-3.914A1 1 0 0 1 9.914 3H18a1 1 0 0 1 1 1Z"
+          ></path>
+        </svg>
+
+        Resume
+      </a>
+    </li>
+    <li>
+      <a href="#contact-me">
+        <svg
+          class="w-5 h-5 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 17h6l3 3v-3h2V9h-2M4 4h11v8H9l-3 3v-3H4V4Z"></path>
+        </svg>
+
+        Contact Me
+      </a>
+    </li>
+  </ul>
+  <div
+    class="dock bg-neutral text-neutral-content visible xs:invisible sm:visible md:visible lg:invisible"
+  >
+    <a
+      class="btn bg-black text-white border-black shadow-sm"
+      role="button"
+      href="/"
     >
-      <li>
-        <a href="/">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
+      <svg
+        class="size-[1.2em]"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
+          <polyline
+            points="1 11 12 2 23 11"
             fill="none"
-            viewBox="0 0 24 24"
             stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0
-                                011 1v4a1 1 0 001 1m-6 0h6"
-            ></path>
-          </svg>
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="/projects">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
+            stroke-miterlimit="10"
+            stroke-width="2"></polyline>
+          <path
+            d="m5,13v7c0,1.105.895,2,2,2h10c1.105,0,2-.895,2-2v-7"
             fill="none"
-            viewBox="0 0 24 24"
             stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
-          </svg>
-          Projects
-        </a>
-      </li>
-      <li>
-        <a href="/resume">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="2"></path>
+          <line
+            x1="12"
+            y1="22"
+            x2="12"
+            y2="18"
             fill="none"
-            viewBox="0 0 24 24"
             stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
-          </svg>
-          Resume
-        </a>
-      </li>
-      <li>
-        <a href="#contact-me">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            ></path>
-          </svg>
-          Contact Me
-        </a>
-      </li>
-    </ul>
-    <div
-      class="dock bg-neutral text-neutral-content visible xs:invisible sm:visible md:visible lg:invisible"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="2"></line>
+        </g>
+      </svg>
+      <span class="dock-label">Home</span>
+    </a>
+    <a
+      class="btn bg-black text-white border-black shadow-sm"
+      role="button"
+      href="/resume"
     >
-      <a
-        class="btn bg-black text-white border-black shadow-sm"
-        role="button"
-        href="/"
+      <svg
+        class="size-[1.2em]"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
       >
-        <svg
-          class="size-[1.2em]"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
-            <polyline
-              points="1 11 12 2 23 11"
-              fill="none"
-              stroke="currentColor"
-              stroke-miterlimit="10"
-              stroke-width="2"></polyline>
-            <path
-              d="m5,13v7c0,1.105.895,2,2,2h10c1.105,0,2-.895,2-2v-7"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-miterlimit="10"
-              stroke-width="2"></path>
-            <line
-              x1="12"
-              y1="22"
-              x2="12"
-              y2="18"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-miterlimit="10"
-              stroke-width="2"></line>
-          </g>
-        </svg>
-        <span class="dock-label">Home</span>
-      </a>
-      <a
-        class="btn bg-black text-white border-black shadow-sm"
-        role="button"
-        href="/resume"
+        <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
+          <polyline
+            points="3 14 9 14 9 17 15 17 15 14 21 14"
+            fill="none"
+            stroke="currentColor"
+            stroke-miterlimit="10"
+            stroke-width="2"></polyline>
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="2"
+            ry="2"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="2"></rect>
+        </g>
+      </svg>
+      <span class="dock-label">Resume</span>
+    </a>
+    <a
+      class="btn bg-black text-white border-black shadow-sm"
+      role="button"
+      href="/resume"
+    >
+      <svg
+        class="size-[1.2em]"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
       >
-        <svg
-          class="size-[1.2em]"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
-            <polyline
-              points="3 14 9 14 9 17 15 17 15 14 21 14"
-              fill="none"
-              stroke="currentColor"
-              stroke-miterlimit="10"
-              stroke-width="2"></polyline>
-            <rect
-              x="3"
-              y="3"
-              width="18"
-              height="18"
-              rx="2"
-              ry="2"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-miterlimit="10"
-              stroke-width="2"></rect>
-          </g>
-        </svg>
-        <span class="dock-label">Resume</span>
-      </a>
-      <a
-        class="btn bg-black text-white border-black shadow-sm"
-        role="button"
-        href="/resume"
+        <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
+          <circle
+            cx="12"
+            cy="12"
+            r="3"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="2"></circle>
+          <path
+            d="m22,13.25v-2.5l-2.318-.966c-.167-.581-.395-1.135-.682-1.654l.954-2.318-1.768-1.768-2.318.954c-.518-.287-1.073-.515-1.654-.682l-.966-2.318h-2.5l-.966,2.318c-.581.167-1.135.395-1.654.682l-2.318-.954-1.768,1.768.954,2.318c-.287.518-.515,1.073-.682,1.654l-2.318.966v2.5l2.318.966c.167.581.395,1.135.682,1.654l-.954,2.318,1.768,1.768,2.318-.954c.518.287,1.073.515,1.654.682l.966,2.318h2.5l.966-2.318c.581-.167,1.135-.395,1.654-.682l2.318.954,1.768-1.768-.954-2.318c.287-.518.515-1.073.682-1.654l2.318-.966Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="2"></path>
+        </g>
+      </svg>
+      <span class="dock-label">Work Experience</span>
+    </a>
+    <a
+      class="btn bg-black text-white border-black shadow-sm"
+      role="button"
+      href="/resume"
+    >
+      <svg
+        class="size-[1.2em]"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
       >
-        <svg
-          class="size-[1.2em]"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
-            <circle
-              cx="12"
-              cy="12"
-              r="3"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-miterlimit="10"
-              stroke-width="2"></circle>
-            <path
-              d="m22,13.25v-2.5l-2.318-.966c-.167-.581-.395-1.135-.682-1.654l.954-2.318-1.768-1.768-2.318.954c-.518-.287-1.073-.515-1.654-.682l-.966-2.318h-2.5l-.966,2.318c-.581.167-1.135.395-1.654.682l-2.318-.954-1.768,1.768.954,2.318c-.287.518-.515,1.073-.682,1.654l-2.318.966v2.5l2.318.966c.167.581.395,1.135.682,1.654l-.954,2.318,1.768,1.768,2.318-.954c.518.287,1.073.515,1.654.682l.966,2.318h2.5l.966-2.318c.581-.167,1.135-.395,1.654-.682l2.318.954,1.768-1.768-.954-2.318c.287-.518.515-1.073.682-1.654l2.318-.966Z"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-miterlimit="10"
-              stroke-width="2"></path>
-          </g>
-        </svg>
-        <span class="dock-label">Work Experience</span>
-      </a>
-      <a
-        class="btn bg-black text-white border-black shadow-sm"
-        role="button"
-        href="/resume"
+        <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
+          <circle
+            cx="12"
+            cy="12"
+            r="3"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="2"></circle>
+          <path
+            d="m22,13.25v-2.5l-2.318-.966c-.167-.581-.395-1.135-.682-1.654l.954-2.318-1.768-1.768-2.318.954c-.518-.287-1.073-.515-1.654-.682l-.966-2.318h-2.5l-.966,2.318c-.581.167-1.135.395-1.654.682l-2.318-.954-1.768,1.768.954,2.318c-.287.518-.515,1.073-.682,1.654l-2.318.966v2.5l2.318.966c.167.581.395,1.135.682,1.654l-.954,2.318,1.768,1.768,2.318-.954c.518.287,1.073.515,1.654.682l.966,2.318h2.5l.966-2.318c.581-.167,1.135-.395,1.654-.682l2.318.954,1.768-1.768-.954-2.318c.287-.518.515-1.073.682-1.654l2.318-.966Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="square"
+            stroke-miterlimit="10"
+            stroke-width="2"></path>
+        </g>
+      </svg>
+      <span class="dock-label">Projects</span>
+    </a>
+  </div>
+  <div id="main" class="relative lg:bg-gray-100 bg-gray-100 h-full">
+    <section class="md:flex m-0">
+      <div
+        class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[3%] lg:bg-gray-100 bg-gray-100 m-0"
       >
-        <svg
-          class="size-[1.2em]"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <g fill="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
-            <circle
-              cx="12"
-              cy="12"
-              r="3"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-miterlimit="10"
-              stroke-width="2"></circle>
-            <path
-              d="m22,13.25v-2.5l-2.318-.966c-.167-.581-.395-1.135-.682-1.654l.954-2.318-1.768-1.768-2.318.954c-.518-.287-1.073-.515-1.654-.682l-.966-2.318h-2.5l-.966,2.318c-.581.167-1.135.395-1.654.682l-2.318-.954-1.768,1.768.954,2.318c-.287.518-.515,1.073-.682,1.654l-2.318.966v2.5l2.318.966c.167.581.395,1.135.682,1.654l-.954,2.318,1.768,1.768,2.318-.954c.518.287,1.073.515,1.654.682l.966,2.318h2.5l.966-2.318c.581-.167,1.135-.395,1.654-.682l2.318.954,1.768-1.768-.954-2.318c.287-.518.515-1.073.682-1.654l2.318-.966Z"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="square"
-              stroke-miterlimit="10"
-              stroke-width="2"></path>
-          </g>
-        </svg>
-        <span class="dock-label">Projects</span>
-      </a>
-    </div>
-    <div id="main" class="relative lg:bg-gray-100 bg-gray-100 h-full">
-      <section class="md:flex m-0">
-        <div class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[3%] lg:bg-gray-100 bg-gray-100 m-0">
-          <div class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5">
-            <div class="avatar mt-[15%] mb-[10%] lg:pt-[30%] lg:mb-[15%]">
-              <div class="mask-radial-at-center">
-                <img
-                  class="rounded-full w-2xs h-2xs"
-                  src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/dp.webp"
-                  alt="Default Pic"
-                  aria-label="Default Pic"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
         <div
-          class="px-[7.5%] md:px-[5.5%] lg:pt-[15%] lg:bg-gray-50 bg-gray-100 md:w-[65%] lg:pb-[15%]"
+          class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
         >
-          <h6 class="font-medium text-gray-500 text-lg md:text-4xl">vinny</h6>
-          <h2 class="font-bold text-indigo-500 text-lg md:text-6xl uppercase">
-            Marquez
-          </h2>
-          <p class="font-normal text-gray-500 text-md md:text-xl mt-8 mb-16">
-            SDET, Automation Test Engineer, Web Developer
-          </p>
-          <div class="divider"></div>
-          <div class="md:flex m-0">
-            <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
-              <h6 class="font-bold text-gray-500 text-base">Location</h6>
-              <HoverCardComponent
-                client:load
-                btnLabel="Melbourne, AU"
-                icon="@/assets/icons/au-flag.png"
-                url=""
-                header="Melbourne, AU"
-                description="Moved via a job opportunity"
-                dateDescription="Migrated in 2022"
-              />
-            </div>
-            <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
-              <h6 class="font-bold text-gray-500 text-base">Linkedin</h6>
-              <HoverCardComponent
-                client:load
-                btnLabel="@vinnymarquez"
-                icon=""
-                url="https://www.linkedin.com/in/vinnymarquez/"
-                header="Linkedin"
-                description="Test"
-                dateDescription="Member since 2010"
-              />
-            </div>
-            <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
-              <h6 class="font-bold text-gray-500 text-base">Github</h6>
-              <HoverCardComponent
-                client:load
-                btnLabel="@t2vi"
-                icon=""
-                url="https://www.linkedin.com/in/vinnymarquez/"
-                header="@t2vi"
-                description="Mostly personal projects, some work related."
-                dateDescription="Joined 2010"
-              />
-            </div>
-            <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
-              <h6 class="font-bold text-gray-500 text-base">Email</h6>
-              <HoverCardComponent
-                client:load
-                btnLabel="me@vinnymarquez.dev"
-                icon=""
-                url="mailto:me@vinnymarquez.dev"
-                header=""
-                description="Please don't send me spam!"
-                dateDescription=""
+          <div class="avatar mt-[15%] mb-[10%] lg:pt-[30%] lg:mb-[15%]">
+            <div class="mask-radial-at-center">
+              <img
+                class="rounded-full w-2xs h-2xs"
+                src="https://raw.githubusercontent.com/t2vi/vinnymarquez.dev.cdn/main/uploads/dp.webp"
+                alt="Default Pic"
+                aria-label="Default Pic"
               />
             </div>
           </div>
         </div>
-      </section>
-      <section class="lg:flex m-0">
-        <div
-          class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-200 bg-gray-50 m-0"
+      </div>
+      <div
+        class="px-[7.5%] md:px-[5.5%] lg:pt-[15%] lg:bg-gray-50 bg-gray-100 md:w-[65%] lg:pb-[15%]"
+      >
+        <h6
+          class="font-medium text-gray-500 mt-[0%] md:mt-[10%] lg:mt-[2%] md:text-xl lg:text-3xl"
         >
-          <div
-            class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
-          >
-            <h2 class="font-bold text-base">About Me</h2>
-            <div>What I am all about.</div>
+          vinny
+        </h6>
+        <h2
+          class="font-bold text-indigo-500 text-lg md:text-4xl lg:text-6xl uppercase"
+        >
+          Marquez
+        </h2>
+        <p
+          class="font-normal text-gray-500 text-md md:text-sm lg:text-2xl mt-8 mb-16"
+        >
+          SDET, Automation Test Engineer, Web Developer
+        </p>
+        <div class="divider"></div>
+        <div class="md:flex m-0">
+          <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
+            <h6 class="font-bold text-gray-500 text-base md:text-xs lg:text-lg">
+              Location
+            </h6>
+            <HoverCardComponent
+              client:load
+              btnLabel="Melbourne, AU"
+              icon="@/assets/icons/au-flag.png"
+              url=""
+              header="Melbourne, AU"
+              description="Moved via a job opportunity"
+              dateDescription="Migrated in 2022"
+            />
+          </div>
+          <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
+            <h6 class="font-bold text-gray-500 text-base md:text-xs lg:text-lg">
+              Linkedin
+            </h6>
+            <HoverCardComponent
+              client:load
+              btnLabel="@vinnymarquez"
+              icon=""
+              url="https://www.linkedin.com/in/vinnymarquez/"
+              header="Linkedin"
+              description="Test"
+              dateDescription="Member since 2010"
+            />
+          </div>
+          <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
+            <h6 class="font-bold text-gray-500 text-base md:text-xs lg:text-lg">
+              Github
+            </h6>
+            <HoverCardComponent
+              client:load
+              btnLabel="@t2vi"
+              icon=""
+              url="https://www.linkedin.com/in/vinnymarquez/"
+              header="@t2vi"
+              description="Mostly personal projects, some work related."
+              dateDescription="Joined 2010"
+            />
+          </div>
+          <div class="mb-3 md:mb-0 md:shrink-0 md:w-[25%]">
+            <h6 class="font-bold text-gray-500 text-base md:text-xs lg:text-lg">
+              Email
+            </h6>
+            <HoverCardComponent
+              client:load
+              btnLabel="me@vinnymarquez.dev"
+              icon=""
+              url="mailto:me@vinnymarquez.dev"
+              header=""
+              description="Please don't send me spam!"
+              dateDescription=""
+            />
           </div>
         </div>
-        <div class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-50 lg:w-[65%] text-gray-500">
-          <Fragment set:html={json.aboutMe} />
-        </div>
-      </section>
-      <section class="lg:flex m-0">
+      </div>
+    </section>
+    <section class="lg:flex m-0">
+      <div
+        class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-200 bg-gray-50 m-0"
+      >
         <div
-          class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-100 bg-gray-100 m-0"
+          class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
         >
-          <div
-            class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
-          >
-            <h2 class="font-bold text-base">Work Experience</h2>
-            <div>16 years in IT.</div>
-          </div>
+          <h2 class="font-bold text-base">About Me</h2>
+          <div>What I am all about.</div>
         </div>
+      </div>
+      <div
+        class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-50 lg:w-[65%] text-gray-500"
+      >
+        <Fragment set:html={json.aboutMe} />
+      </div>
+    </section>
+    <section class="lg:flex m-0">
+      <div
+        class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-100 bg-gray-100 m-0"
+      >
         <div
-          class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-50 bg-gray-100 lg:w-[65%]"
+          class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
         >
-          <ol
-            class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400"
-          >
-            {experiences.map((experience) =>
+          <h2 class="font-bold text-base">Work Experience</h2>
+          <div>{new Date().getFullYear() - 2007} years in IT.</div>
+        </div>
+      </div>
+      <div
+        class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-50 bg-gray-100 lg:w-[65%]"
+      >
+        <ol
+          class="relative text-gray-500 border-s border-gray-200 dark:border-gray-700 dark:text-gray-400"
+        >
+          {
+            experiences.map((experience) => (
               <li class="mb-10 ms-6">
                 <span
                   class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -start-4 ring-1 ring-white
-              dark:ring-gray-900 dark:bg-gray-700">
+              dark:ring-gray-900 dark:bg-gray-700"
+                >
                   <img
                     src={experience.data.icon?.replace("/public", "")}
                     alt="Planit Logo"
                     class="rounded-full h-8 w-8 border border-gray-600"
                   />
                 </span>
-                <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}, {experience.data.country}</h3>
+                <h3 class="font-medium leading-tight">
+                  {experience.data.company} · {experience.data.location},{" "}
+                  {experience.data.country}
+                </h3>
                 <p class="text-sm">{experience.data.role}</p>
-                <p class="text-sm"><YearMonthDate date={experience.data.startdate} /> - <YearMonthDate date={experience.data.enddate} /></p> 
-              </li>
-            )}
-          </ol>
-          <a class="btn mt-5" href="/resume">View full resume</a>
-        </div>
-      </section>
-      <section class="lg:flex m-0" id="projects">
-        <div
-          class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-200 bg-gray-50 m-0"
-        >
-          <div
-            class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
-          >
-            <h2 class="font-bold text-base">Projects</h2>
-            <div>Stuff I've been working on.</div>
-          </div>
-        </div>
-        <div
-          class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-100 lg:w-[65%] text-gray-500"
-        >
-          {filteredprojects.map((project) => 
-          <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
-            <div
-              class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-              style={`background-image: url(${project.data.heroimage?.replace("/public", "")})`}
-              title="Woman holding a mug"
-            >
-            </div>
-            <div
-              class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
-            >
-              <div class="mb-8">
-                <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset float-right">{project.data.status}</span>
-                <div class="text-gray-600 font-bold text-xl mb-2">{project.data.title}</div>
-                <p class="text-gray-500 text-base">
-                  {project.data.description}
+                <p class="text-sm">
+                  <YearMonthDate date={experience.data.startdate} /> -{" "}
+                  <YearMonthDate date={experience.data.enddate} />
                 </p>
-              </div>
-              <div class="flex items-center">
-                <div class="join">
-                  {project.data.tags?.map((tag) => 
-                    <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset">{tag}</span>
-                  )}
+              </li>
+            ))
+          }
+        </ol>
+        <a class="btn mt-5" href="/resume">View full resume</a>
+      </div>
+    </section>
+    <section class="lg:flex m-0" id="projects">
+      <div
+        class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-200 bg-gray-50 m-0"
+      >
+        <div
+          class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
+        >
+          <h2 class="font-bold text-base">Projects</h2>
+          <div>Stuff I've been working on.</div>
+        </div>
+      </div>
+      <div
+        class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-100 bg-gray-100 lg:w-[65%] text-gray-500"
+      >
+        {
+          filteredprojects.map((project) => (
+            <div class="max-w-sm w-full lg:max-w-full lg:flex mb-5">
+              <div
+                class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+                style={`background-image: url(${project.data.heroimage?.replace("/public", "")})`}
+                title="Woman holding a mug"
+              />
+              <div class="border-r border-b border-l border-gray-100 lg:border-l-0 lg:border-t lg:border-gray-100 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                <div class="mb-8">
+                  <span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-green-600/20 ring-inset float-right">
+                    {project.data.status}
+                  </span>
+                  <div class="text-gray-600 font-bold text-xl mb-2">
+                    {project.data.title}
+                  </div>
+                  <p class="text-gray-500 text-base">
+                    {project.data.description}
+                  </p>
+                </div>
+                <div class="flex items-center">
+                  <div class="join">
+                    {project.data.tags?.map((tag) => (
+                      <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          )}
-          <a class="btn mt-5" href="/projects">View all projects</a>
-        </div>
-        
-      </section>
-      <section class="lg:flex m-0" id="contact-me">
+          ))
+        }
+        <a class="btn mt-5" href="/projects">View all projects</a>
+      </div>
+    </section>
+    <section class="lg:flex m-0" id="contact-me">
+      <div
+        class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-100 bg-gray-50 m-0"
+      >
         <div
-          class="px-[7.5%] pb-[5%] lg:shrink-0 lg:w-[35%] lg:pt-[6.5%] lg:pr-[5%] lg:bg-gray-100 bg-gray-50 m-0"
+          class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
         >
-          <div
-            class="flex flex-col items-start lg:items-end text-gray-500 lg:pt-0 pt-5"
-          >
-            <h2 class="font-bold text-base">Contact Me</h2>
-            <div>Please don't send me spam.</div>
+          <h2 class="font-bold text-base">Contact Me</h2>
+          <div>Please don't send me spam.</div>
+        </div>
+      </div>
+      <div
+        class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-50 bg-gray-50 lg:w-[65%]"
+      >
+        <form
+          class="form"
+          action="https://formspree.io/f/manyzrbg"
+          method="POST"
+        >
+          <div class="flex flex-col md:flex-row justify-between gap-5">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="input input-bordered w-full px-2 mt-4 py-2 placeholder-gray-300 placeholder-gray-300 focus:outline-none"
+              name="email"
+            />
           </div>
-        </div>
-        <div
-          class="px-[7.5%] pb-[5%] lg:px-[5.5%] lg:pt-[6.5%] lg:bg-gray-50 bg-gray-50 lg:w-[65%]"
-        >
-          <form
-            class="form"
-            action="https://formspree.io/f/manyzrbg"
-            method="POST"
-          >
-            <div class="flex flex-col md:flex-row justify-between gap-5">
-              <input
-                type="email"
-                placeholder="Your email address"
-                class="input input-bordered w-full px-2 mt-4 py-2 placeholder-gray-300 placeholder-gray-300 focus:outline-none"
-                name="email"
-              />
-            </div>
-            <div>
-              <textarea
-                placeholder="Your Message"
-                class="input input-bordered w-full px-2 mt-4 py-2 h-32 placeholder-gray-300 focus:outline-none"
-                name="message"></textarea>
-            </div>
-            <button class="w-full mt-5 btn" type="submit">Submit</button>
-          </form>
-        </div>
-      </section>
-    </div>
-    <Footer></Footer>
-  </Layout>
+          <div>
+            <textarea
+              placeholder="Your Message"
+              class="input input-bordered w-full px-2 mt-4 py-2 h-32 placeholder-gray-300 focus:outline-none"
+              name="message"></textarea>
+          </div>
+          <button class="w-full mt-5 btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </div>
+  <Footer />
+</Layout>
