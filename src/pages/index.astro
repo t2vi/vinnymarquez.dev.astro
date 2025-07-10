@@ -359,7 +359,7 @@ const experiences = (await getCollection("experiences")).sort(
                   <img
                     src={experience.data.icon?.replace("/public", "")}
                     alt="Planit Logo"
-                    class="h-8 w-8"
+                    class="rounded-full h-8 w-8 border border-gray-600"
                   />
                 </span>
                 <h3 class="font-medium leading-tight">{experience.data.company} · {experience.data.location}, {experience.data.country}</h3>
