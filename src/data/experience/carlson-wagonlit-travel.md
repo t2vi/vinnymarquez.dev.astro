@@ -16,4 +16,6 @@ techUsed:
   - Angular JS
   - NUnit
   - Amadeus
+  - Travelport
+  - Sabre
 ---
