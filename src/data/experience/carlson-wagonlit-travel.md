@@ -6,16 +6,14 @@ company: Carlson Wagonlit Travel
 location: Makati
 country: PH
 roles:
-  - systems-analyst
-  - sdet
-  - senior-web-developer
+  - SDET
+  - Systems Architect
+  - Senior Web Developer
 current: false
 techUsed:
-  - dotnet
-  - specflow
-  - angular
-  - nunit
-  - amadeus
-  - travelport
-  - sabre
+  - .NET
+  - SpecFlow
+  - Angular JS
+  - NUnit
+  - Amadeus
 ---
