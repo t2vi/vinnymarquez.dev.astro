@@ -5,18 +5,18 @@ company: Planit Testing
 location: Melbourne
 country: AU
 roles:
-  - sdet
-  - automation-test-consultant
+  - SDET
+  - Automation Test Consultant
 current: true
 techUsed:
-  - dotnet
-  - specflow
-  - reqnroll
-  - selenium
-  - selenoid
-  - mstest
-  - nunit
-  - postman
-  - visual-studio
-  - azure-devops
+  - .NET
+  - SpecFlow
+  - Reqnroll
+  - Selenium
+  - Selenoid
+  - MS Test
+  - NUnit
+  - Postman
+  - Visual Studio
+  - Azure Devops
 ---
