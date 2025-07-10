@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '@layouts/Layout.astro';
+import { render } from "astro:content";
+const projects = await getCollection("projects");
+
+export const getStaticPaths = async () => {
+  const projects = await await getCollection("projects");
+  const paths = projects.map((project) => {
+    return {
+      params: { project_id: project.id },
+      props: { project },
+    };
+  });
+
+  return paths;
+};
+
+const { project }: Props = Astro.props;
+const { Content } = await render(project);
+---
+<Layout>
+  <section class="relative isolate overflow-hidden px-6 pt-12 pb-0 sm:pt-22 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:max-w-4xl">
+  <h2 class="text-center text-lg font-semibold text-gray-900">{project.data.title} ~ {project.data.project}</h2>
+  <br/>
+  <Fragment set:html={project.data.embedCode}></Fragment>
+  <br/>
+  <div class="w-full px-4">
+    <Content/>
+  </div>
+  
+  </div>
+  </section>
+</Layout>
